@@ -7,14 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  <nav class="navbar">
-      <div class="link">Home</div>
-      <div class="link">List</div>
-      <div class="link">Create</div>
+  <nav>
+    <ul>
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/list">List</a></li>
+      <li><a routerLink="/create">Create</a></li>
+    </ul>
   </nav>
-  <div class="hero">
-    <h1>Library</h1>
-    <p>Buil with Angular and Restful API (Spring boot and postreSQL) hosted on Heroku</p>
-  </div>
+  <router-outlet></router-outlet>
 </body>
 </html>
