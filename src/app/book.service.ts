@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Book } from './book';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -25,15 +26,13 @@ export class BookService {
     },
   ];
 
-  apiULR = 'http://leopaul29-library-database.herokuapp.com/api/';
+  baseUrl = environment.apiUrl;
+  apiUrl = this.baseUrl + 'api/books';
 
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
-    return of(this.books);
-    // let header = new HttpHeaders();
-    // header.set('Access-Control-Allow-Origin', '*');
-
-    // return this.http.get<Book[]>(this.apiULR + 'books', { headers: header });
+    //return of(this.books);
+    return this.http.get<Book[]>(this.apiUrl);
   }
 }
