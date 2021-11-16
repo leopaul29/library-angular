@@ -9,6 +9,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BookFormComponent } from './book-form/book-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './book.service';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,6 +24,7 @@ const routes: Routes = [
     BookListComponent,
     HomeComponent,
     BookFormComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
