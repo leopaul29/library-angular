@@ -32,7 +32,7 @@ export class BookService {
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
-    //return of(this.books);
-    return this.http.get<Book[]>(this.apiUrl);
+    return of(this.books);
+    //return this.http.get<Book[]>(this.apiUrl);
   }
 }
