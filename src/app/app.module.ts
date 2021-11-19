@@ -11,6 +11,7 @@ import { BookFormComponent } from './book-form/book-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './book.service';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,7 +32,9 @@ const routes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,    
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
