@@ -8,9 +8,9 @@ import { BookService } from '../book.service';
   template: ` <h1>List</h1>
     <div *ngIf="statusCode || errmsg">
       <div *ngIf="statusCode != 200" type="danger">{{ errmsg }}</div>
-      <div *ngIf="statusCode === 200" type="success"
-        >Book has been deleted successfully.</div
-      >
+      <div *ngIf="statusCode === 200" type="success">
+        Book has been deleted successfully.
+      </div>
     </div>
     <ul>
       <div *ngFor="let book of books">
